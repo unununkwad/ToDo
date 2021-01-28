@@ -8,3 +8,5 @@ C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.csproj.GenerateResource.cach
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.csproj.CoreCompileInputs.cache
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.exe
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.pdb
+C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.ToDo_Item.resources
+C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Task_Edit.resources
