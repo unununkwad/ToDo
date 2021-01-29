@@ -43,7 +43,7 @@
             this.textBox_Task.Location = new System.Drawing.Point(12, 35);
             this.textBox_Task.Multiline = true;
             this.textBox_Task.Name = "textBox_Task";
-            this.textBox_Task.Size = new System.Drawing.Size(436, 52);
+            this.textBox_Task.Size = new System.Drawing.Size(375, 52);
             this.textBox_Task.TabIndex = 0;
             // 
             // textBox_Description
@@ -51,24 +51,26 @@
             this.textBox_Description.Location = new System.Drawing.Point(12, 137);
             this.textBox_Description.Multiline = true;
             this.textBox_Description.Name = "textBox_Description";
-            this.textBox_Description.Size = new System.Drawing.Size(436, 93);
+            this.textBox_Description.Size = new System.Drawing.Size(375, 107);
             this.textBox_Description.TabIndex = 1;
             // 
             // label_Task
             // 
             this.label_Task.AutoSize = true;
+            this.label_Task.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Task.Location = new System.Drawing.Point(12, 9);
             this.label_Task.Name = "label_Task";
-            this.label_Task.Size = new System.Drawing.Size(31, 13);
+            this.label_Task.Size = new System.Drawing.Size(40, 20);
             this.label_Task.TabIndex = 2;
             this.label_Task.Text = "Task";
             // 
             // label_Description
             // 
             this.label_Description.AutoSize = true;
+            this.label_Description.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Description.Location = new System.Drawing.Point(12, 111);
             this.label_Description.Name = "label_Description";
-            this.label_Description.Size = new System.Drawing.Size(60, 13);
+            this.label_Description.Size = new System.Drawing.Size(88, 20);
             this.label_Description.TabIndex = 3;
             this.label_Description.Text = "Description";
             // 
@@ -81,16 +83,17 @@
             // label_Date
             // 
             this.label_Date.AutoSize = true;
+            this.label_Date.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Date.Location = new System.Drawing.Point(12, 259);
             this.label_Date.Name = "label_Date";
-            this.label_Date.Size = new System.Drawing.Size(50, 13);
+            this.label_Date.Size = new System.Drawing.Size(70, 20);
             this.label_Date.TabIndex = 5;
             this.label_Date.Text = "End date";
             // 
             // button_Edit_Item
             // 
             this.button_Edit_Item.Image = ((System.Drawing.Image)(resources.GetObject("button_Edit_Item.Image")));
-            this.button_Edit_Item.Location = new System.Drawing.Point(383, 389);
+            this.button_Edit_Item.Location = new System.Drawing.Point(322, 389);
             this.button_Edit_Item.Name = "button_Edit_Item";
             this.button_Edit_Item.Size = new System.Drawing.Size(65, 54);
             this.button_Edit_Item.TabIndex = 6;
@@ -102,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(474, 461);
+            this.ClientSize = new System.Drawing.Size(409, 461);
             this.Controls.Add(this.button_Edit_Item);
             this.Controls.Add(this.label_Date);
             this.Controls.Add(this.monthCalendar1);

@@ -29,5 +29,17 @@ namespace TODO
             Task_Edit edit = new TODO.Task_Edit(label_Item.Text, Description);
             edit.Show();
         }
+
+        private void checkBox_Item_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox_Item.Checked == true)
+            {
+                BackColor = System.Drawing.ColorTranslator.FromHtml("#85B185");
+            }
+            else
+            {
+                BackColor = System.Drawing.ColorTranslator.FromHtml("#dcdcdc");
+            }
+        }
     }
 }

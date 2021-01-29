@@ -38,13 +38,15 @@ namespace TODO
             label1.Text = monthCalendar1.SelectionStart.ToString("d");
         }
 
+
+        //generate a item
         int position_Item = 0;
         public void addItem(string Text, bool Checked)
         {
             ToDo_Item item = new TODO.ToDo_Item(Text, Checked);
             panel3.Controls.Add(item);
             item.Top = position_Item;
-            panel3.Show();
+            //panel3.Show();
             position_Item = position_Item + item.Height + 10;
         }
 
@@ -52,13 +54,13 @@ namespace TODO
         {
             addItem(AddItem_Text.Text, false);
             AddItem_Text.Text = "";
-            //string[] items = new string[]
-            //{
-            //   "coś1","coś2","coś3","coś4","coś5"
-            //};
-            //comboBox1.Items.AddRange(items);
+
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
