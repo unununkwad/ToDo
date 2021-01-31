@@ -78,6 +78,8 @@
             this.Controls.Add(this.checkBox_Item);
             this.Name = "ToDo_Item";
             this.Size = new System.Drawing.Size(378, 33);
+            this.Click += new System.EventHandler(this.ToDo_Item_Click);
+            this.DoubleClick += new System.EventHandler(this.ToDo_Item_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

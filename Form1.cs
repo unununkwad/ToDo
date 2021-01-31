@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Criterion;
 
 namespace TODO
 {
@@ -18,9 +19,11 @@ namespace TODO
         private Configuration myConfiguration;
         private ISessionFactory mySessionFactory;
         private ISession mySession;
+        int position_Item = 0;
+        int Tasks_index = 0;
         public Form1()
         {
-            InitializeComponent();
+                InitializeComponent();
             DateTime thisDay = DateTime.Today;
             label1.Text = thisDay.ToString("d");
 
@@ -37,9 +40,15 @@ namespace TODO
             myConfiguration.Configure();
             mySessionFactory = myConfiguration.BuildSessionFactory();
             mySession = mySessionFactory.OpenSession();
+
+
+
+            Reset_Panel();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+
+            private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (groupBox1.Visible == false)
             {
@@ -56,18 +65,29 @@ namespace TODO
             label1.Text = monthCalendar1.SelectionStart.ToString("d");
             groupBox1.Hide();
 
-            ICriteria crit = mySession.CreateCriteria<contactDb>();
-            var Items = crit.List<contactDb>();
+            Reset_Panel();
+        }
+
+
+        //generate a items on panel
+        public void Reset_Panel()
+        {
+            panel3.Controls.Clear();
+            position_Item = 0;
+            Tasks_index = 1;
+            var Items = mySession.CreateCriteria<contactDb>()
+                .Add(Expression.Like("Day", label1.Text))
+                .AddOrder(Order.Asc("Done"))
+                .List<contactDb>();
             foreach (var s in Items)
             {
                 AddItem(s.Day, s.Sort_Value, s.Title, s.Description, s.Reminder, s.Done);
-
+                Tasks_index++;
             }
         }
 
 
-        //generate a item
-        int position_Item = 0;
+        //add a item to panel
         public void AddItem(string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
             ToDo_Item item = new TODO.ToDo_Item(Day, Sort_Value, Title, Description, Reminder, Done);
@@ -79,63 +99,32 @@ namespace TODO
 
 
 
+
         private void Add_Task_Click(object sender, EventArgs e)
-        {
-            //AddItem(AddItem_Text.Text, false);
+        {     
             
-
-
-
-
-            using (mySession.BeginTransaction())
+            if(AddItem_Text.Text == "")
             {
-                contactDb db = new contactDb
+                MessageBox.Show("First type a text.");
+            }
+            else
+            {
+                using (mySession.BeginTransaction())
                 {
-                    Day = label1.Text,
-                    Sort_Value = 5,
-                    Title = AddItem_Text.Text,
-                    Reminder = false,
-                    Done = false
-                };
-
-                mySession.Save(db);
-
-                mySession.Transaction.Commit();
-
-            }
-            AddItem_Text.Text = "";
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (mySession != null && mySession.IsOpen)
-            {
-                mySession.Close();
-            }
-            if (mySessionFactory != null && !mySessionFactory.IsClosed)
-            {
-                mySessionFactory.Close();
-            }
-            
-            myConfiguration = new Configuration();
-            myConfiguration.Configure();
-            mySessionFactory = myConfiguration.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
-
-            using (mySession.BeginTransaction())
-            {
-                contactDb db = new contactDb
-                {
-
-                };
-
-                mySession.Save(db);
-
-                mySession.Transaction.Commit();
+                    contactDb db = new contactDb
+                    {
+                        Day = label1.Text,
+                        Sort_Value = Tasks_index,
+                        Title = AddItem_Text.Text,
+                        Reminder = false,
+                        Done = false
+                    };
+                    mySession.Save(db);
+                    mySession.Transaction.Commit();
+                }
+                AddItem_Text.Text = "";
+                Reset_Panel();
             }
         }
-
-       
     }
 }
