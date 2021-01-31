@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.AddItem = new System.Windows.Forms.Button();
+            this.Add_Task = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,15 +49,15 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AddItem
+            // Add_Task
             // 
-            this.AddItem.Location = new System.Drawing.Point(340, 23);
-            this.AddItem.Name = "AddItem";
-            this.AddItem.Size = new System.Drawing.Size(75, 23);
-            this.AddItem.TabIndex = 0;
-            this.AddItem.Text = "Add";
-            this.AddItem.UseVisualStyleBackColor = true;
-            this.AddItem.Click += new System.EventHandler(this.AddItem_Click);
+            this.Add_Task.Location = new System.Drawing.Point(340, 23);
+            this.Add_Task.Name = "Add_Task";
+            this.Add_Task.Size = new System.Drawing.Size(75, 23);
+            this.Add_Task.TabIndex = 0;
+            this.Add_Task.Text = "Add";
+            this.Add_Task.UseVisualStyleBackColor = true;
+            this.Add_Task.Click += new System.EventHandler(this.Add_Task_Click);
             // 
             // panel1
             // 
@@ -87,7 +87,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "To do list";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -156,7 +155,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.AddItem_Text);
-            this.panel2.Controls.Add(this.AddItem);
+            this.panel2.Controls.Add(this.Add_Task);
             this.panel2.Location = new System.Drawing.Point(0, 384);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(427, 57);
@@ -212,7 +211,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button AddItem;
+        private System.Windows.Forms.Button Add_Task;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;

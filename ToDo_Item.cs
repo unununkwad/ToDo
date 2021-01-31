@@ -12,21 +12,31 @@ namespace TODO
 {
     public partial class ToDo_Item : UserControl
     {
+        string day, title, description;
+        int sort_value;
+        bool reminder, done;
         public ToDo_Item()
         {
             InitializeComponent();
         }
         string Description = "test";
-        public ToDo_Item(string Text, bool Checked)
+        public ToDo_Item(string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
             InitializeComponent();
-            label_Item.Text = Text;
-            checkBox_Item.Checked = Checked;
+            day = Day;
+            sort_value = Sort_Value;
+            title = Title;
+            description = Description;
+            reminder = Reminder;
+            done = Done;
+
+            label_Item.Text = Title;
+            checkBox_Item.Checked = Done;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Task_Edit edit = new TODO.Task_Edit(label_Item.Text, Description);
+            Task_Edit edit = new TODO.Task_Edit(day, sort_value, title, description, reminder, done);
             edit.Show();
         }
 

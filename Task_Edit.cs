@@ -17,11 +17,11 @@ namespace TODO
             InitializeComponent();
         }
 
-        public Task_Edit(string Task_Name, string Task_Description)
+        public Task_Edit(string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
             InitializeComponent();
-            textBox_Task.Text = Task_Name;
-            textBox_Description.Text = Task_Description;
+            textBox_Task.Text = Title;
+            textBox_Description.Text = Description;
         }
 
 
