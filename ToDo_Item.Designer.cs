@@ -32,6 +32,7 @@
             this.checkBox_Item = new System.Windows.Forms.CheckBox();
             this.label_Item = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,8 @@
             this.checkBox_Item.TabIndex = 0;
             this.checkBox_Item.UseVisualStyleBackColor = true;
             this.checkBox_Item.CheckedChanged += new System.EventHandler(this.checkBox_Item_CheckedChanged);
+            this.checkBox_Item.Click += new System.EventHandler(this.checkBox_Item_Click);
+            this.checkBox_Item.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox_Item_MouseClick);
             // 
             // label_Item
             // 
@@ -67,12 +70,23 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(307, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(35, 24);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // ToDo_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_Item);
             this.Controls.Add(this.checkBox_Item);
@@ -91,5 +105,6 @@
         private System.Windows.Forms.CheckBox checkBox_Item;
         private System.Windows.Forms.Label label_Item;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -36,6 +36,7 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label_Date = new System.Windows.Forms.Label();
             this.button_Edit_Item = new System.Windows.Forms.Button();
+            this.label_Date_Value = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_Task
@@ -79,6 +80,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(15, 281);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label_Date
             // 
@@ -86,9 +88,9 @@
             this.label_Date.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Date.Location = new System.Drawing.Point(12, 259);
             this.label_Date.Name = "label_Date";
-            this.label_Date.Size = new System.Drawing.Size(70, 20);
+            this.label_Date.Size = new System.Drawing.Size(74, 20);
             this.label_Date.TabIndex = 5;
-            this.label_Date.Text = "End date";
+            this.label_Date.Text = "End date:";
             // 
             // button_Edit_Item
             // 
@@ -100,12 +102,22 @@
             this.button_Edit_Item.UseVisualStyleBackColor = true;
             this.button_Edit_Item.Click += new System.EventHandler(this.button_Edit_Item_Click);
             // 
+            // label_Date_Value
+            // 
+            this.label_Date_Value.AutoSize = true;
+            this.label_Date_Value.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Date_Value.Location = new System.Drawing.Point(99, 259);
+            this.label_Date_Value.Name = "label_Date_Value";
+            this.label_Date_Value.Size = new System.Drawing.Size(0, 20);
+            this.label_Date_Value.TabIndex = 7;
+            // 
             // Task_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(409, 461);
+            this.Controls.Add(this.label_Date_Value);
             this.Controls.Add(this.button_Edit_Item);
             this.Controls.Add(this.label_Date);
             this.Controls.Add(this.monthCalendar1);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Button button_Edit_Item;
+        private System.Windows.Forms.Label label_Date_Value;
     }
 }
