@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Criterion;
-//using NHibernate.Linq;
 
 namespace TODO
 {
@@ -25,7 +23,7 @@ namespace TODO
         {
             InitializeComponent();
         }
-            private void pictureBox1_Click(object sender, EventArgs e)
+            private void pictureBox_Calendar_Click(object sender, EventArgs e)
         {
             if (groupBox1.Visible == false)
             {
@@ -37,23 +35,14 @@ namespace TODO
             }
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            label1.Text = monthCalendar1.SelectionStart.ToString("d");
-            groupBox1.Hide();
-            MessageBox.Show("click");
-            Reset_Panel();
-        }
+
+
 
 
         //generate a items on panel
         public void Reset_Panel()
         {
-
             Reset_Session();
-
-
-            //MessageBox.Show("reset");
             panel3.Controls.Clear();
             position_Item = 0;
             Tasks_index = 1;
@@ -62,11 +51,18 @@ namespace TODO
                 .AddOrder(Order.Asc("Done"))
                 .AddOrder(Order.Asc("Sort_Value"))
                 .List<contactDb>();
+            DateTime thisDay = DateTime.Today;
             foreach (var s in Items)
             {
+                if(s.Day == thisDay.ToString("d") && s.Reminder == false)
+                {
+                    Reminder reminder_form = new TODO.Reminder(s.Id, s.Day, s.Sort_Value, s.Title, s.Description, s.Reminder, s.Done);
+                    reminder_form.Show();
+                    s.Reminder = true;
+                    Update(s.Id, s.Day, s.Sort_Value, s.Title, s.Description, s.Reminder, s.Done);
+                }
                 AddItem(s.Id, s.Day, s.Sort_Value, s.Title, s.Description, s.Reminder, s.Done);
                 Tasks_index++;
-                //MessageBox.Show(s.Title, s.Done.ToString());
             }
         }
 
@@ -174,6 +170,7 @@ namespace TODO
             }
             else
             {
+                Reset_Session();
                 using (mySession.BeginTransaction())
                 {
                     contactDb db = new contactDb
@@ -181,7 +178,7 @@ namespace TODO
                         Day = label1.Text,
                         Sort_Value = Tasks_index,
                         Title = AddItem_Text.Text,
-                        Reminder = false,
+                        Reminder = true,
                         Done = false
                     };
                     mySession.Save(db);
@@ -201,9 +198,18 @@ namespace TODO
             Reset_Session();
         }
 
-        private void button_Refresh_Click(object sender, EventArgs e)
+        private void pictureBox_Refresh_Click(object sender, EventArgs e)
         {
             Reset_Panel();
         }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            label1.Text = monthCalendar1.SelectionStart.ToString("d");
+            groupBox1.Hide();
+            Reset_Panel();
+        }
+
+
     }
 }

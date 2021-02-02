@@ -15,6 +15,12 @@ namespace TODO
         string day, title, description;
         int sort_value, id;
         bool reminder, done;
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            label_Date_Value.Text = monthCalendar1.SelectionStart.ToString("d");
+        }
+
         public Task_Edit()
         {
             InitializeComponent();
@@ -47,10 +53,6 @@ namespace TODO
             this.Close();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            label_Date_Value.Text = monthCalendar1.SelectionStart.ToString("d");
-        }
 
     }
 }

@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToDo_Item));
             this.checkBox_Item = new System.Windows.Forms.CheckBox();
             this.label_Item = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox_Edit = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Delete = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Edit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Delete)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox_Item
@@ -46,39 +47,40 @@
             this.checkBox_Item.UseVisualStyleBackColor = true;
             this.checkBox_Item.CheckedChanged += new System.EventHandler(this.checkBox_Item_CheckedChanged);
             this.checkBox_Item.Click += new System.EventHandler(this.checkBox_Item_Click);
-            this.checkBox_Item.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox_Item_MouseClick);
             // 
             // label_Item
             // 
             this.label_Item.AutoSize = true;
             this.label_Item.Font = new System.Drawing.Font("Yu Gothic UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Item.Location = new System.Drawing.Point(30, 10);
-            this.label_Item.MaximumSize = new System.Drawing.Size(320, 0);
+            this.label_Item.MaximumSize = new System.Drawing.Size(280, 0);
             this.label_Item.Name = "label_Item";
             this.label_Item.Size = new System.Drawing.Size(27, 13);
             this.label_Item.TabIndex = 1;
             this.label_Item.Text = "text";
+            this.label_Item.DoubleClick += new System.EventHandler(this.label_Item_DoubleClick);
             // 
-            // pictureBox1
+            // pictureBox_Edit
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(348, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_Edit.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Edit.Image")));
+            this.pictureBox_Edit.Location = new System.Drawing.Point(348, 3);
+            this.pictureBox_Edit.Name = "pictureBox_Edit";
+            this.pictureBox_Edit.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox_Edit.TabIndex = 2;
+            this.pictureBox_Edit.TabStop = false;
+            this.pictureBox_Edit.Click += new System.EventHandler(this.pictureBox_Edit_Click);
             // 
-            // button5
+            // pictureBox_Delete
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(307, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(35, 24);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.pictureBox_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_Delete.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Delete.Image")));
+            this.pictureBox_Delete.Location = new System.Drawing.Point(318, 6);
+            this.pictureBox_Delete.Name = "pictureBox_Delete";
+            this.pictureBox_Delete.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox_Delete.TabIndex = 5;
+            this.pictureBox_Delete.TabStop = false;
+            this.pictureBox_Delete.Click += new System.EventHandler(this.pictureBox_Delete_Click);
             // 
             // ToDo_Item
             // 
@@ -86,15 +88,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox_Delete);
+            this.Controls.Add(this.pictureBox_Edit);
             this.Controls.Add(this.label_Item);
             this.Controls.Add(this.checkBox_Item);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "ToDo_Item";
             this.Size = new System.Drawing.Size(378, 33);
             this.Click += new System.EventHandler(this.ToDo_Item_Click);
             this.DoubleClick += new System.EventHandler(this.ToDo_Item_DoubleClick);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Edit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Delete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,7 +108,7 @@
 
         private System.Windows.Forms.CheckBox checkBox_Item;
         private System.Windows.Forms.Label label_Item;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox_Edit;
+        private System.Windows.Forms.PictureBox pictureBox_Delete;
     }
 }
