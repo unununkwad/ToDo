@@ -15,9 +15,7 @@ namespace TODO
     {
         string day, title, description;
         int sort_value, id;
-        bool reminder, done, done2;
-
-
+        bool reminder, done;
 
         public ToDo_Item(int Id, string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
@@ -29,6 +27,7 @@ namespace TODO
             description = Description;
             reminder = Reminder;
             done = Done;
+
             label_Item.Text = title;
             checkBox_Item.Checked = done;
         }
@@ -47,8 +46,8 @@ namespace TODO
 
         private void pictureBox_Delete_Click(object sender, EventArgs e)
         {
+            //detele a task
             var question = MessageBox.Show("Are you sure that you would delete a task?", "Delete a task", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (question == DialogResult.Yes)
             {
                 Form1 delete = new Form1();
@@ -67,7 +66,6 @@ namespace TODO
             toolTip1.Show("Edit", pictureBox_Edit);
         }
 
-
         private void label_Item_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Double click to show a task", label_Item);
@@ -84,30 +82,17 @@ namespace TODO
             edit.Show();
         }
 
-
-
         private void checkBox_Item_Click(object sender, EventArgs e)
         {
-            if (done == true)
-            {
-                done = false;
-            }
-            else if (done == false)
-            {
-                done = true;
-            }
+            //complete a task
+            done = !done;
             Form1 reset = new Form1();
             reset.Update(id, day, sort_value, title, description, reminder, done);
-
         }
 
-
-        private void ToDo_Item_Click(object sender, EventArgs e)
-        {
-
-        }
         private void checkBox_Item_CheckedChanged(object sender, EventArgs e)
         {
+            //set a color for completed task
             if (checkBox_Item.Checked == true)
             {
                 BackColor = System.Drawing.ColorTranslator.FromHtml("#85B185");
@@ -117,6 +102,7 @@ namespace TODO
                 BackColor = System.Drawing.ColorTranslator.FromHtml("#dcdcdc");
             }
         }
+
         private void toolTip1_Draw(object sender, DrawToolTipEventArgs e)
         {
             e.DrawBackground();

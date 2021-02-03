@@ -41,7 +41,7 @@ namespace TODO
 
         private void label_Date_TextChanged(object sender, EventArgs e)
         {
-            button_Edit_Item.Enabled = true;
+            
         }
 
         private void textBox_Task_TextChanged(object sender, EventArgs e)
@@ -51,13 +51,21 @@ namespace TODO
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
+            string check = label_Date_Value.Text;
             label_Date_Value.Text = monthCalendar1.SelectionStart.ToString("d");
+
+            if(check != label_Date_Value.Text)
+            {
+                button_Edit_Item.Enabled = true;
+            }
         }
 
         private void button_Edit_Item_Click(object sender, EventArgs e)
         {
+            //complete a edition
             Form1 reset = new Form1();
             reset.Update(id, label_Date_Value.Text, sort_value, textBox_Task.Text, textBox_Description.Text, reminder, done);
+
             MessageBox.Show("The task has bin edited. Please refresh the main page of application.", "Task edited");
             Show_Task show = new TODO.Show_Task(id, day, sort_value, title, description, reminder, done);
             show.Show();

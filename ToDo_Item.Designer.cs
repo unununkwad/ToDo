@@ -101,7 +101,6 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "ToDo_Item";
             this.Size = new System.Drawing.Size(378, 33);
-            this.Click += new System.EventHandler(this.ToDo_Item_Click);
             this.DoubleClick += new System.EventHandler(this.ToDo_Item_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Edit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Delete)).EndInit();

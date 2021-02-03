@@ -14,7 +14,7 @@ namespace TODO
     {
         string day, title, description;
         int sort_value, id;
-        bool reminder, done, done2;
+        bool reminder, done;
 
         public Show_Task(int Id, string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
@@ -30,12 +30,12 @@ namespace TODO
             label_Title.Text = "Title: " + title;
             label_Description.Text = "Description: " + description;
             label_Date.Text = "Date: " + day;
-
         }
+
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            //delete a task
             var question = MessageBox.Show("Are you sure that you would delete a task?", "Delete a task", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (question == DialogResult.Yes)
             {
                 Form1 delete = new Form1();
@@ -47,6 +47,7 @@ namespace TODO
 
         private void button_Reminder_Click(object sender, EventArgs e)
         {
+            //set a reminder
             DateTime thisDay = DateTime.Today;
             if (day == thisDay.ToString("d"))
             {
@@ -69,6 +70,7 @@ namespace TODO
 
         private void button_Done_Click(object sender, EventArgs e)
         {
+            //complete a task
             if (done == true)
             {
                 MessageBox.Show("You can't complete a completed task", "Completed Task");
@@ -81,7 +83,5 @@ namespace TODO
                 this.Close();
             }
         }
-
-
     }
 }

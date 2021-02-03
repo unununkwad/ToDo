@@ -14,10 +14,8 @@ namespace TODO
     {
         string day, title, description;
         int sort_value, id;
-
-
-
         bool reminder, done;
+
         public Reminder(int Id, string Day, int Sort_Value, string Title, string Description, bool Reminder, bool Done)
         {
             InitializeComponent();
@@ -28,6 +26,7 @@ namespace TODO
             description = Description;
             reminder = Reminder;
             done = Done;
+
             label_Title.Text = title;
         }
 
