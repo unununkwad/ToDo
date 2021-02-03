@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Add_Task = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,6 +41,7 @@
             this.AddItem_Text = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Refresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Calendar)).BeginInit();
@@ -79,6 +81,7 @@
             this.pictureBox_Refresh.TabIndex = 7;
             this.pictureBox_Refresh.TabStop = false;
             this.pictureBox_Refresh.Click += new System.EventHandler(this.pictureBox_Refresh_Click);
+            this.pictureBox_Refresh.MouseHover += new System.EventHandler(this.pictureBox_Refresh_MouseHover);
             // 
             // label2
             // 
@@ -113,6 +116,7 @@
             this.pictureBox_Calendar.TabIndex = 4;
             this.pictureBox_Calendar.TabStop = false;
             this.pictureBox_Calendar.Click += new System.EventHandler(this.pictureBox_Calendar_Click);
+            this.pictureBox_Calendar.MouseHover += new System.EventHandler(this.pictureBox_Calendar_MouseHover);
             // 
             // panel3
             // 
@@ -138,6 +142,8 @@
             this.AddItem_Text.Name = "AddItem_Text";
             this.AddItem_Text.Size = new System.Drawing.Size(322, 20);
             this.AddItem_Text.TabIndex = 4;
+            this.AddItem_Text.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddItem_Text_KeyDown);
+            this.AddItem_Text.MouseHover += new System.EventHandler(this.AddItem_Text_MouseHover);
             // 
             // monthCalendar1
             // 
@@ -169,7 +175,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "To do List";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -195,6 +201,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox_Refresh;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

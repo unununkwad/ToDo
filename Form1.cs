@@ -101,24 +101,7 @@ namespace TODO
 
 
             using (mySession.BeginTransaction())
-            {
-                /*if (Done == true)
-                {
-                    mySession.Query<contactDb>()
-                        .Where(a => a.Id == id)
-                        .UpdateBuilder()
-                        .Set(a => a.Done, false)
-                        .Update();
-                }
-                else
-                {
-                    mySession.Query<contactDb>()
-                        .Where(a => a.Id == id)
-                        .UpdateBuilder()
-                        .Set(a => a.Done, true)
-                        .Update();
-                }*/
-                
+            {                
                 contactDb db = new contactDb
                 {
                     Id = id,
@@ -162,31 +145,9 @@ namespace TODO
 
 
         private void Add_Task_Click(object sender, EventArgs e)
-        {     
-            
-            if(AddItem_Text.Text == "")
-            {
-                MessageBox.Show("First type a text.");
-            }
-            else
-            {
-                Reset_Session();
-                using (mySession.BeginTransaction())
-                {
-                    contactDb db = new contactDb
-                    {
-                        Day = label1.Text,
-                        Sort_Value = Tasks_index,
-                        Title = AddItem_Text.Text,
-                        Reminder = true,
-                        Done = false
-                    };
-                    mySession.Save(db);
-                    mySession.Transaction.Commit();
-                }
-                AddItem_Text.Text = "";
-                Reset_Panel();
-            }
+        {
+
+            Add_Task_To_Database();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -211,5 +172,64 @@ namespace TODO
         }
 
 
+
+        private void AddItem_Text_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Add_Task_To_Database();
+            }
+        }
+
+        public void Add_Task_To_Database()
+        {
+            
+            if (AddItem_Text.Text == "")
+            {
+                MessageBox.Show("First type a text.");
+            }
+            else
+            {
+                Reset_Session();
+                using (mySession.BeginTransaction())
+                {
+                    contactDb db = new contactDb
+                    {
+                        Day = label1.Text,
+                        Sort_Value = Tasks_index,
+                        Title = AddItem_Text.Text,
+                        Reminder = true,
+                        Done = false
+                    };
+                    mySession.Save(db);
+                    mySession.Transaction.Commit();
+                }
+                AddItem_Text.Text = "";
+                Reset_Panel();
+            }
+            
+
+        }
+
+        private void pictureBox_Refresh_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Refresh a page", pictureBox_Refresh);
+        }
+        private void toolTip1_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
+        }
+
+        private void pictureBox_Calendar_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Calendar", pictureBox_Calendar);
+        }
+
+        private void AddItem_Text_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Type here a task title", AddItem_Text);
+        }
     }
 }

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToDo_Item));
             this.checkBox_Item = new System.Windows.Forms.CheckBox();
             this.label_Item = new System.Windows.Forms.Label();
             this.pictureBox_Edit = new System.Windows.Forms.PictureBox();
             this.pictureBox_Delete = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Edit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Delete)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +49,7 @@
             this.checkBox_Item.UseVisualStyleBackColor = true;
             this.checkBox_Item.CheckedChanged += new System.EventHandler(this.checkBox_Item_CheckedChanged);
             this.checkBox_Item.Click += new System.EventHandler(this.checkBox_Item_Click);
+            this.checkBox_Item.MouseHover += new System.EventHandler(this.checkBox_Item_MouseHover);
             // 
             // label_Item
             // 
@@ -59,6 +62,7 @@
             this.label_Item.TabIndex = 1;
             this.label_Item.Text = "text";
             this.label_Item.DoubleClick += new System.EventHandler(this.label_Item_DoubleClick);
+            this.label_Item.MouseHover += new System.EventHandler(this.label_Item_MouseHover);
             // 
             // pictureBox_Edit
             // 
@@ -70,6 +74,7 @@
             this.pictureBox_Edit.TabIndex = 2;
             this.pictureBox_Edit.TabStop = false;
             this.pictureBox_Edit.Click += new System.EventHandler(this.pictureBox_Edit_Click);
+            this.pictureBox_Edit.MouseHover += new System.EventHandler(this.pictureBox_Edit_MouseHover);
             // 
             // pictureBox_Delete
             // 
@@ -81,6 +86,7 @@
             this.pictureBox_Delete.TabIndex = 5;
             this.pictureBox_Delete.TabStop = false;
             this.pictureBox_Delete.Click += new System.EventHandler(this.pictureBox_Delete_Click);
+            this.pictureBox_Delete.MouseHover += new System.EventHandler(this.pictureBox_Delete_MouseHover);
             // 
             // ToDo_Item
             // 
@@ -110,5 +116,6 @@
         private System.Windows.Forms.Label label_Item;
         private System.Windows.Forms.PictureBox pictureBox_Edit;
         private System.Windows.Forms.PictureBox pictureBox_Delete;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

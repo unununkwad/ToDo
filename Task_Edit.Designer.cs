@@ -46,6 +46,7 @@
             this.textBox_Task.Name = "textBox_Task";
             this.textBox_Task.Size = new System.Drawing.Size(375, 52);
             this.textBox_Task.TabIndex = 0;
+            this.textBox_Task.TextChanged += new System.EventHandler(this.textBox_Task_TextChanged);
             // 
             // textBox_Description
             // 
@@ -54,6 +55,7 @@
             this.textBox_Description.Name = "textBox_Description";
             this.textBox_Description.Size = new System.Drawing.Size(375, 107);
             this.textBox_Description.TabIndex = 1;
+            this.textBox_Description.TextChanged += new System.EventHandler(this.textBox_Description_TextChanged);
             // 
             // label_Task
             // 
@@ -91,9 +93,11 @@
             this.label_Date.Size = new System.Drawing.Size(74, 20);
             this.label_Date.TabIndex = 5;
             this.label_Date.Text = "End date:";
+            this.label_Date.TextChanged += new System.EventHandler(this.label_Date_TextChanged);
             // 
             // button_Edit_Item
             // 
+            this.button_Edit_Item.Enabled = false;
             this.button_Edit_Item.Image = ((System.Drawing.Image)(resources.GetObject("button_Edit_Item.Image")));
             this.button_Edit_Item.Location = new System.Drawing.Point(322, 389);
             this.button_Edit_Item.Name = "button_Edit_Item";
@@ -126,7 +130,7 @@
             this.Controls.Add(this.textBox_Description);
             this.Controls.Add(this.textBox_Task);
             this.Name = "Task_Edit";
-            this.Text = "Task_Edit";
+            this.Text = "Edit task";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -53,7 +53,29 @@ namespace TODO
             {
                 Form1 delete = new Form1();
                 delete.Delete(id, day, sort_value, title, description, reminder, done);
+                MessageBox.Show("Task deleted. Please refresh the main page of application.", "Delete a task");
             }
+        }
+
+        private void pictureBox_Delete_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Delete", pictureBox_Delete);
+        }
+
+        private void pictureBox_Edit_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Edit", pictureBox_Edit);
+        }
+
+
+        private void label_Item_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Double click to show a task", label_Item);
+        }
+
+        private void checkBox_Item_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Complete a task", checkBox_Item);
         }
 
         private void pictureBox_Edit_Click(object sender, EventArgs e)
@@ -68,14 +90,14 @@ namespace TODO
         {
             if (done == true)
             {
-                done2 = false;
+                done = false;
             }
             else if (done == false)
             {
-                done2 = true;
+                done = true;
             }
             Form1 reset = new Form1();
-            reset.Update(id, day, sort_value, title, description, reminder, done2);
+            reset.Update(id, day, sort_value, title, description, reminder, done);
 
         }
 
@@ -94,6 +116,12 @@ namespace TODO
             {
                 BackColor = System.Drawing.ColorTranslator.FromHtml("#dcdcdc");
             }
+        }
+        private void toolTip1_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
         }
     }
 }

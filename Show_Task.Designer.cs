@@ -120,7 +120,7 @@
             this.Controls.Add(this.label_Description);
             this.Controls.Add(this.label_Title);
             this.Name = "Show_Task";
-            this.Text = "Show_Task";
+            this.Text = "Show task";
             this.ResumeLayout(false);
             this.PerformLayout();
 
