@@ -60,20 +60,20 @@
             // label_Task
             // 
             this.label_Task.AutoSize = true;
-            this.label_Task.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Task.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Task.Location = new System.Drawing.Point(12, 9);
             this.label_Task.Name = "label_Task";
-            this.label_Task.Size = new System.Drawing.Size(40, 20);
+            this.label_Task.Size = new System.Drawing.Size(43, 19);
             this.label_Task.TabIndex = 2;
             this.label_Task.Text = "Task";
             // 
             // label_Description
             // 
             this.label_Description.AutoSize = true;
-            this.label_Description.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Description.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Description.Location = new System.Drawing.Point(12, 111);
             this.label_Description.Name = "label_Description";
-            this.label_Description.Size = new System.Drawing.Size(88, 20);
+            this.label_Description.Size = new System.Drawing.Size(93, 19);
             this.label_Description.TabIndex = 3;
             this.label_Description.Text = "Description";
             // 
@@ -82,18 +82,19 @@
             this.monthCalendar1.Location = new System.Drawing.Point(15, 281);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.TitleBackColor = System.Drawing.Color.Beige;
+            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.Beige;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // label_Date
             // 
             this.label_Date.AutoSize = true;
-            this.label_Date.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Date.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Date.Location = new System.Drawing.Point(12, 259);
             this.label_Date.Name = "label_Date";
-            this.label_Date.Size = new System.Drawing.Size(74, 20);
+            this.label_Date.Size = new System.Drawing.Size(79, 19);
             this.label_Date.TabIndex = 5;
             this.label_Date.Text = "End date:";
-            this.label_Date.TextChanged += new System.EventHandler(this.label_Date_TextChanged);
             // 
             // button_Edit_Item
             // 
@@ -119,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(409, 461);
             this.Controls.Add(this.label_Date_Value);
             this.Controls.Add(this.button_Edit_Item);

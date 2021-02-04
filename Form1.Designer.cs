@@ -61,7 +61,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.BurlyWood;
             this.panel1.Controls.Add(this.pictureBox_Refresh);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -86,15 +86,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(172, 11);
-            this.label2.MaximumSize = new System.Drawing.Size(80, 0);
+            this.label2.BackColor = System.Drawing.Color.BurlyWood;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(119, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 52);
+            this.label2.Size = new System.Drawing.Size(176, 31);
             this.label2.TabIndex = 6;
-            this.label2.Text = "To do list";
+            this.label2.Text = "TO DO LIST";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
@@ -128,7 +127,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.BackColor = System.Drawing.Color.BurlyWood;
             this.panel2.Controls.Add(this.AddItem_Text);
             this.panel2.Controls.Add(this.Add_Task);
             this.panel2.Location = new System.Drawing.Point(0, 384);
@@ -151,6 +150,8 @@
             this.monthCalendar1.Location = new System.Drawing.Point(10, 14);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.TitleBackColor = System.Drawing.Color.Beige;
+            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.Beige;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // groupBox1
@@ -168,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(427, 442);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel3);

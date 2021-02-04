@@ -15,6 +15,8 @@ C:\Users\Kuba\source\repos\TODO\TODO\bin\Debug\Remotion.Linq.EagerFetching.xml
 C:\Users\Kuba\source\repos\TODO\TODO\bin\Debug\System.Data.SqlClient.xml
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Form1.resources
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Properties.Resources.resources
+C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Reminder.resources
+C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Show_Task.resources
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Task_Edit.resources
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.ToDo_Item.resources
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.csproj.GenerateResource.cache
@@ -23,5 +25,3 @@ C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.csproj.CopyComplete
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.exe
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.pdb
 C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.csprojAssemblyReference.cache
-C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Show_Task.resources
-C:\Users\Kuba\source\repos\TODO\TODO\obj\Debug\TODO.Reminder.resources

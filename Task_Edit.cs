@@ -39,11 +39,6 @@ namespace TODO
             button_Edit_Item.Enabled = true;
         }
 
-        private void label_Date_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void textBox_Task_TextChanged(object sender, EventArgs e)
         {
             button_Edit_Item.Enabled = true;
@@ -62,14 +57,23 @@ namespace TODO
 
         private void button_Edit_Item_Click(object sender, EventArgs e)
         {
-            //complete a edition
+            //check a text and complete a edition
             Form1 reset = new Form1();
             reset.Update(id, label_Date_Value.Text, sort_value, textBox_Task.Text, textBox_Description.Text, reminder, done);
-
-            MessageBox.Show("The task has bin edited. Please refresh the main page of application.", "Task edited");
-            Show_Task show = new TODO.Show_Task(id, day, sort_value, title, description, reminder, done);
-            show.Show();
-            this.Close();
+            
+            if (textBox_Task.Text.Length > 99)
+            {
+                MessageBox.Show("Title must be less than 100 letters.");
+            }
+            else if (textBox_Description.Text.Length > 299)
+            {
+                MessageBox.Show("Description must be less than 300 letters.");
+            }
+            else
+            {
+                MessageBox.Show("The task has bin edited. Please refresh the main page of application.", "Task edited");
+                this.Close();
+            }
         }
     }
 }

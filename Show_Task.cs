@@ -27,9 +27,9 @@ namespace TODO
             reminder = Reminder;
             done = Done;
 
-            label_Title.Text = "Title: " + title;
-            label_Description.Text = "Description: " + description;
-            label_Date.Text = "Date: " + day;
+            label_Title_Text.Text = title;
+            label_Description_Text.Text = description;
+            label_Date_Text.Text = day;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
