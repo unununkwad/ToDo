@@ -175,6 +175,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(443, 481);
+            this.MinimumSize = new System.Drawing.Size(443, 481);
             this.Name = "Form1";
             this.Text = "To do List";
             this.Load += new System.EventHandler(this.Form1_Load);
